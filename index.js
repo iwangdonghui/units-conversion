@@ -23,7 +23,7 @@ cBtn.addEventListener("click", function(){
     // liters and gallons
     volVal.textContent = `${randomVal} liters = ${(randomVal * litersToGallons).toFixed(3)} gallons | ${randomVal} gallons = ${(randomVal / litersToGallons).toFixed(3)} liters`
     // pounds and kilos
-    massVal.textContent = `${randomVal} liters = ${(randomVal * poundsToKilos).toFixed(3)} gallons | ${randomVal} gallons = ${(randomVal / poundsToKilos).toFixed(3)} liters`
+    massVal.textContent = `${randomVal} pounds = ${(randomVal * poundsToKilos).toFixed(3)} kilograms | ${randomVal} kilograms = ${(randomVal / poundsToKilos).toFixed(3)} pounds`
 })
 
 
