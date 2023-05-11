@@ -55,8 +55,8 @@ p {
 #unitsConversion {
     margin: 40px auto auto;
     padding-bottom: 15px;
-    max-width: 420px; // make sure things look fine on mobile devices
-    border-radius: 10px;
+    max-width: 500px; 
+    border-radius: 8px;
     border: none;
     background: #273549;
     /* text-shadow: 0 0 1px black; */
