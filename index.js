@@ -1,10 +1,11 @@
-
-const metersToFeet = 3.281
-
-const litersToGallons = 0.264
-
-const poundsToKilos = 0.453
-
+/*
+1 meter = 3.281 feet
+1 foot = 0.305 meters
+1 liter = 0.264 gallon
+1 gallon = 3.788 liters
+1 kilogram = 2.204 pound
+1 pound = 0.454 kilogram
+*/
 
 const inputVal = document.getElementById("input") // get input value
 const cBtn = document.getElementById("btn") // get convert btn
@@ -19,14 +20,33 @@ function getInputVal(){
 cBtn.addEventListener("click", function(){
     const randomVal = getInputVal()
     // meters and feet
-    lengthVal.textContent = `${randomVal} meters = ${(randomVal * metersToFeet).toFixed(3)} feet | ${randomVal} feet = ${(randomVal / metersToFeet).toFixed(3)} meters`
+    lengthVal.textContent = lengthConvert(randomVal)
     // liters and gallons
-    volVal.textContent = `${randomVal} liters = ${(randomVal * litersToGallons).toFixed(3)} gallons | ${randomVal} gallons = ${(randomVal / litersToGallons).toFixed(3)} liters`
+    volVal.textContent = volumeConvert(randomVal)
     // pounds and kilos
-    massVal.textContent = `${randomVal} pounds = ${(randomVal * poundsToKilos).toFixed(3)} kilograms | ${randomVal} kilograms = ${(randomVal / poundsToKilos).toFixed(3)} pounds`
-})
+    massVal.textContent = massConvert(randomVal)
+}
 
+function lengthConvert(value) {
+    let meter = (value * 3.281).toFixed(3)
+    let foot = (value * 0.305).toFixed(3)
+    let meters = `${value} meters = ${meter} feet`
+    let feet = `${value} feet = ${foot} meters`
+    return `${meters} | ${feet}`
+}
 
+function volumeConvert(value) {
+    let liter = (value * 0.264).toFixed(3)
+    let gallon = (value * 3.788).toFixed(3)
+    let liters = `${value} liters = ${liter} gallons`
+    let gallons = `${value} gallons =  ${gallon} liters`
+    return `${liters} | ${gallons}`
+}
 
-
-
+function massConvert(value) {
+    let kilo = (value * 2.204).toFixed(3)
+    let pound = (value * 0.454).toFixed(3)
+    let kilos = `${value} kilos = ${kilo} pounds`
+    let pounds = `${value} pounds = ${pound} kilos`
+    return `${kilos} | ${pounds}`
+}
